@@ -104,13 +104,11 @@ public class  JobData {
 
             for (Map.Entry<String, String> entry : row.entrySet()) {
                searchTerm = entry.getValue().toLowerCase();
-                if (searchTerm.contains(value.toLowerCase())) {
-                    if (!jobs.contains(entry)) {
+                if (searchTerm.contains(value.toLowerCase()) && !jobs.contains(entry)) {
                         jobs.add(row);
                     }
                 }
             }
-        }
 
         return jobs;
     }
